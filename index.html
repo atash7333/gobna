@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <title>الجبن التعزي - عرض ثلاثي الأبعاد</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- شاشة التعليمات (تم نقلها هنا لتغطية كامل الشاشة) -->
+    <div class="poster-instructions">
+      <div class="phone">
+        <div class="header">تعليمات التحكم</div>
+    
+        <div class="step">
+          <div class="step-img">
+            <img src="finger1.png" alt="تحريك المشهد" />
+          </div>
+          <div class="step-text">
+            <div class="step-text-title">تحريك المشهد – بإصبعين</div>
+            <div class="step-text-sub">اسحب بإصبعين لتحريك المجسم في أي اتجاه.</div>
+          </div>
+        </div>
+    
+        <div class="step">
+          <div class="step-img">
+            <img src="finger2.png" alt="تدوير المجسم" />
+          </div>
+          <div class="step-text">
+            <div class="step-text-title"> تدوير المجسم – بإصبع واحد</div>
+            <div class="step-text-sub">اسحب بإصبع واحد لتدوير المجسم حوله.</div>
+          </div>
+        </div>
+    
+        <div class="step">
+          <div class="step-img">
+            <img src="finger3.png" alt="تكبير وتصغير" />
+          </div>
+          <div class="step-text">
+            <div class="step-text-title"> تكبير وتصغير – بالقرص بإصبعين</div>
+            <div class="step-text-sub">قرّب أو أبعد إصبعيك للتحكم في حجم المجسم.</div>
+          </div>
+        </div>
+    
+        <div class="step">
+          <div class="step-img">
+            <img src="finger4.png" alt="إعادة الضبط" />
+          </div>
+          <div class="step-text">
+            <div class="step-text-title">إعادة الضبط – بثلاث نقرات</div>
+            <div class="step-text-sub">انقر ثلاث مرات لإرجاع المجسم لوضعه الأصلي.</div>
+          </div>
+        </div>
+
+        <!-- زر الموافقة -->
+        <button id="instructions-ok-button" class="ok-button">موافق</button>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <!-- 1) رأس البطاقة (Card Header) -->
+      <header class="card-header">
+        <h2 class="brand-name">الجبن الأصيل</h2>
+        <h1 class="product-name">الجبن التعزي المدخن</h1>
+        <p class="product-variant">إصدار خاص</p>
+      </header>
+
+      <main class="viewer-wrapper">
+        <!-- 2) عارض الموديل ثلاثي الأبعاد (Model Viewer) -->
+        <model-viewer id="viewer" src="الجبن التعزي.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1" camera-orbit="-48.65deg 70.9deg 3.61m" field-of-view="30deg" auto-rotate>
+
+        <div class="progress-bar hide" slot="progress-bar" style="display: none;">
+            <div class="update-bar"></div>
+        </div>
+        <button slot="ar-button" id="ar-button">
+            جرّبها الآن
+        </button>
+        <div id="ar-prompt">
+            <img src="ar_hand_prompt.png">
+        </div>
+        </model-viewer>  
+
+        <!-- 3) شريط الأيقونات الجانبي -->
+        <div class="side-icon-bar">
+          <button class="icon-button" id="share-button" title="مشاركة">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+          </button>
+          <button class="icon-button" id="info-button" title="معلومات">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+          </button>
+        </div>
+
+        <!-- 4) نافذة المعلومات المنبثقة (Info Panel) -->
+        <div class="info-panel" id="info-panel">
+          <div class="info-panel-content">
+            <h3>الجبن التعزي المدخن</h3>
+            <p>قطعة فنية من التراث اليمني، مدخنة بعناية على حطب السمر لتعطي نكهة فريدة لا مثيل لها. مثالية مع الخبز أو كإضافة مميزة لأطباقك.</p>
+            <button id="info-panel-close-button" class="ok-button">موافق</button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+    <script src="./script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  </body>
+</html>
